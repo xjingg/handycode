@@ -10,14 +10,16 @@ import DataFlow from './components/DataFlow';
 import FilterList from './components/FilterList';
 import './App.css';
 import Header from './util/Header';
+import Footer from './util/Footer';
 
 export default class App extends React.Component {
   render() {
     return (
+      <div>
+         <Header />
       <BrowserRouter>
         <div className="layout">
           <div className="side">
-          <Header />
           <nav>
             <li>
               <NavLink to="/home">Home</NavLink>
@@ -41,15 +43,15 @@ export default class App extends React.Component {
               <NavLink to="/dataflow">Data Flow
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/theme">Context Theme
               </NavLink>
-            </li>
+            </li> */}
           </nav>
           </div>
           <div className="content">
           <Switch>
-            <Route path="/" exact component={Home}>
+            <Route path="/" exact component={App}>
             </Route>
             <Route path="/counter" exact component={Counter}>
             </Route>
@@ -58,7 +60,7 @@ export default class App extends React.Component {
             </Route>
             <Route path="/fetchnews" exact component={FetchNews} />
             <Route path="/form" exact component={Form} />
-            {/* <Route path="/filterlist" exact component={FilterList} /> */}
+            <Route path="/filterlist" exact component={FilterList} />
             <Route path="/dataflow" exact component={DataFlow} />
             {/* <Route path="/theme" exact component={Theme} /> */}
           </Switch>
@@ -70,7 +72,8 @@ export default class App extends React.Component {
           <Route path="/fetchnews" render={FetchNews} /> */}
         </div>
       </BrowserRouter>
-      
+            <Footer />
+      </div>
     );
   }
 }

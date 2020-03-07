@@ -37,11 +37,11 @@ class Slider extends React.Component{
     }
 }
 
-export const Hover = ()=>(
-    <div className="hover"><label>night theme:</label>
-    <Slider/>
+export const Hover = () => (
+    <div className="hover">
+      <label>night theme:</label> <Slider />
     </div>
-)
+  );
 
 const Home = (props) => (
   <TProvider>
