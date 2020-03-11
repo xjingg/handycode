@@ -11,6 +11,8 @@ import FilterList from './components/FilterList';
 import './App.css';
 import Header from './util/Header';
 import Footer from './util/Footer';
+import Layout from './util/Layout';
+import ContextForm from './components/HookContext/ContextForm'
 
 export default class App extends React.Component {
   render() {
@@ -22,7 +24,7 @@ export default class App extends React.Component {
           <div className="side">
           <nav>
             <li>
-              <NavLink to="/home">Home</NavLink>
+              <NavLink to="/layout">Home</NavLink>
             </li>
             <li>
               <NavLink to="/counter">Counter</NavLink>
@@ -40,6 +42,10 @@ export default class App extends React.Component {
               </NavLink>
             </li>
             <li>
+              <NavLink to="/contextform">Context Form
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/dataflow">Data Flow
               </NavLink>
             </li>
@@ -51,7 +57,7 @@ export default class App extends React.Component {
           </div>
           <div className="content">
           <Switch>
-            <Route path="/" exact component={App}>
+            <Route path="/" exact component={Layout}>
             </Route>
             <Route path="/counter" exact component={Counter}>
             </Route>
@@ -62,7 +68,7 @@ export default class App extends React.Component {
             <Route path="/form" exact component={Form} />
             <Route path="/filterlist" exact component={FilterList} />
             <Route path="/dataflow" exact component={DataFlow} />
-            {/* <Route path="/theme" exact component={Theme} /> */}
+            <Route path="/contextform" exact component={ContextForm} />
           </Switch>
           </div>
 

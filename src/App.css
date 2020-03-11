@@ -182,3 +182,5 @@ input:checked + .slider:before {
   color: white;
   text-align: center;
 }
+
+/* Context Form Style */
